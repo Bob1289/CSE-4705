@@ -1,0 +1,194 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Assignment 1: Intelligent Agents}
+\author{Benny Chen}
+\date{\today}
+
+\usepackage{color}
+\usepackage{amsthm}
+\usepackage{amssymb} 
+\usepackage{amsmath}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
+\begin{document}
+
+\maketitle
+
+\section*{Problem 1}
+\begin{enumerate}[label= (\alph*)]
+    \item Intelligence: The ability for a entity to learn and apply knowledge to decsions to achieve a goal.
+    \item Artificial intelligence: The ability to achieve a goal through obstacles by following rational rules.
+    \item Agent: An entity that can percieve their environment and act upon that information.
+    \item Rationality: The ability to make the best decision given the information available.
+    \item Logical reasoning: The ability to make decisions for actions based on logical rules.
+    \item Agent function: A function that maps the current state of the environment and the history into an action.
+    \item Agent program: A program that implements the agent function and acts it out.
+    \item Autonomy: The ability to learn and make decisions by themselves.
+\end{enumerate}
+\section*{Problem 2}
+Are reflex actions (such as flinching from a hot stove) rational? Are they intelligent? (For the purpose of this question, consider the “intelligent“ to mean applying knowledge or applying thought and reasoning).
+\subsection*{Answer:}
+A reflex action like flinching from a hot stove is rational since its a reaction to a stimulante and a involuntart action. However, it is not intelligent since it is not a thought out action. We don't apply knowledge or reasoning which applying a reflex as it is all instinctual. It is a reaction to a stimulus and not a thought out action.
+
+\section*{Problem 3}
+Many of the computational models of cognitive activities that have been proposed involve quite complex mathematical operations, such as convolving an image with a Gaussian or finding a minimum of the entropy function. Most humans (an certainly all animals) never learn this kind of mathematics at all, almost no one learns it before college, and almost no one can compute the convolution of a function with a Gaussian in their head. What sense does it make to say that the “vision system“ is doing this kind of mathematics whereas the actual person has no idea how to do it?
+
+\subsection*{Answer:}
+The vision system is doing this kind of mathematics since a computer program was trained with anything and everything regarding these topics making it designed to do this kind of mathematics. An actual person has no idea how to do it since they are not a computer program and did not start learning it till college and has a late starting point. Humans do not have a goal in mind when learning this kind of mathematics however a computer program does.
+
+\section*{Problem 4}
+Consider the following assumption regarding the vacuum-cleaner agent we discussed in class:
+
+\begin{itemize}
+    \item The performance measure awards one point for each clean square at each time step over a “lifetime” of 1000 time steps.
+    \item The “geography” of the environment is known apriori (see vacuum cleaner slide showing cells A and B, etc.) but the dirt distribution and the initial location of the agent are not. Clean squares stay clean and sucking cleans the current square. The Left and Right actions move the agent left and right except when this would take the agent outside the environment, in which case hte agent remains where it is.
+    \item The only available actions are Left, Right, and Suck. (Note, there is no NoOp).
+    \item The agent correctly perceives its location and whether that location contains dirt.
+\end{itemize}
+
+\begin{enumerate}[label= (\alph*)]
+    \item Prove that the simple vacuum-cleaner agent function described in class and given the assumptions above is indeed rational. 
+    \item Describe a rational agent function for the case in whcih each movement costs one point. Does the corresponding agent program require internal state?
+    \item Discuss possible agent designs for the cases in which clean squares can become dirty and the geography of the environment is unknown. Does it make sense for the agent to learn from its experience in these cases? If so, what should it learn? If not, why not?
+\end{enumerate}
+
+\subsection*{Answer:}
+\begin{enumerate}[label= (\alph*)]
+    \item The simple vacuum-cleaner agent function is rational since it is trying to maximize the performance measure for the best outcome. It does this by cleaning the current square and moving to the next square and repeating this process until it reaches the end of the environment. It also can perceive its location and whether that location contains dirt and by response cleans the square, therefore knowing what to do. The agent also knows the ``geography'' of the environment and that not to go outside the environment. By doing this, the agent is maximizing the performance measure and is rational.
+    \item The corresponding agent would require internal state since it needs to know where it is and where it has been/cleaned. Since we have more restrictions on movement due to the point loss of performance measure, by knowing our path the agent would disregard some possible descions that would negativley affect the performance measure. In this case, by knowing where it has been, it would minimize the amount of movement and maximize the performance measure.
+    \item Yes, for this agent it is more beneficial to learn from its experience since the environment is unknown. By learning from its experience, it can learn the geography of the environment and the best path to take to maximize the performance measure. The agent would also learn the rate at which the squares become dirty and the best way to clean them. By learning from its experience, the agent would be able to maximize the performance measure.
+\end{enumerate}
+
+\section*{Problem 5}
+For each of the following activities, give a PEAS description of the task envi- ronment and characterize it in terms of the dimensions listed in class (Fully Observable vs. Partially Observable, Static vs. Dynamic, etc.)
+
+\begin{enumerate}[label= (\alph*)]
+    \item Playing soccer
+    \item Exploring the subsurface of oceans of the planet, Titan
+    \item Shopping for used AI books on the Internet
+    \item Playing a tennis match
+    \item Practicing tennis against a wall
+    \item Performing a high jump
+    \item Knitting a sweater
+    \item Bidding on an item at an auction
+\end{enumerate}
+
+\subsection*{Answer:}
+
+\begin{enumerate}[label= (\alph*)]
+    \item PEAS description: 
+    \\Performance measure: Number of goals scored \\Environment: Soccer field, players 
+    \\Actuators: Legs, arms, head
+    \\Sensors: Eyes, ears, nose, skin
+    \\Partially Observable, Stochastic, Sequential, Dynamic, Continuous, Multi-agent
+    \item PEAS description: 
+    \\Performance measure: Data collected and accuracy of data 
+    \\Environment: Ocean, robot/vehicle used to explore
+    \\Actuators: Arms and propeller
+    \\Sensors: Camera, sonar, radar, thermometer, pressure sensor
+    \\Partially Observable, Stochastic, Sequential, Dynamic, Continuous, Single-agent
+    \item PEAS description: 
+    \\Performance measure: Number of books bought, quality of books, fair price of books 
+    \\Environment: Internet, shopping sites, other buyers, sellers
+    \\Actuators: Mouse, keyboard
+    \\Sensors: Monitor, eyes
+    \\Partially Observable, Deterministic, Sequential, Static, Discrete, Multi-agent
+    \item PEAS description: 
+    \\Performance measure: Number of points scored \\Environment: Tennis court, opponent, ball
+    \\Actuators: Arms, legs, head 
+    \\Sensors: Eyes, ears, nose, skin
+    \\Fully Observable, Deterministic, Sequential, Static, Continuous, Multi-agent
+    \item PEAS description: 
+    \\Performance measure: Number of hits/miss 
+    \\Environment: Tennis court, wall, ball
+    \\Actuators: Arms, legs, head
+    \\Sensors: Eyes, ears, nose, skin.
+    \\Fully Observable, Deterministic, Sequential, Static, Continuous, Single-agent
+    \item PEAS description: 
+    \\Performance measure: Height of jump 
+    \\Environment: Track, bar, ground
+    \\Actuators: Legs, arms, head
+    \\Sensors: Eyes, skin
+    \\Fully Observable, Deterministic, Sequential, Static, Continuous, Single-agent
+    \item PEAS description: 
+    \\Performance measure: Quality of the sweater \\Environment: Knitting needles, yarn, pattern 
+    \\Actuators: Hands, arms, head
+    \\Sensors: Eyes, skin
+    \\Fully Observable, Deterministic, Sequential, Static, Discrete, Single-agent
+    \item PEAS description: 
+    \\Performance measure: Value of item bought, price of item bought 
+    \\Environment: Auction site, other buyers, sellers 
+    \\Actuators: Voice, hands, arms
+    \\Sensors: Eyes, ears
+    \\Partially Observable, Stochastic, Sequential, Dynamic, Discrete, Multi-agent
+\end{enumerate}
+
+\section*{Problem 6}
+Define in your own words the following terms:
+
+\begin{enumerate}[label= (\alph*)]
+    \item Reflex agent
+    \item Model-based agent
+    \item Goal-based agent
+    \item Utility-based agent
+    \item Learning agent
+\end{enumerate}
+
+\subsection*{Answer:}
+
+\begin{enumerate}[label= (\alph*)]
+    \item A Reflex agent is a agent that is based on the current state of what information it is receiving
+    \item Model-based agent is a agent that has a model and past data of the environment, that also knows the state after their action
+    \item Goal-based agent is a agent that has a goal in mind and tries to achieve that goal
+    \item Utility-based agent is a agent that has a goal in mind and tries to achieve that goal while also maximizing the performance 
+    \item Learning agent is a agent that learns from its experience and tries to maximize the performance 
+\end{enumerate}
+
+\section*{Problem 7}
+
+The vacuum environment has been considered deterministic up to this point. Discuss possible agent programs for each of the following stockastic versions:
+
+\begin{enumerate}[label= (\alph*)]
+    \item Murphy's Law: Twenty-five percent of the time, the Suck action fails to clean the floor if it is dirty and deposits dirt onto the floor if the floor is clean. How is your agent program affected if the sensor gives the wrong answer 10\% of the time?
+    \item Small Children: At each time step, each clean square has a 10\% chance of becoming dirty. Can you come up with a rational agent design for this case?
+\end{enumerate}
+
+\subsection*{Answer:}
+
+\begin{enumerate}[label= (\alph*)]
+    \item The agent program would be affected since it would not be able to clean the floor 25\% of the time along with the 10\% chance of the sensor giving the wrong answer. Due to this, the agent program would have to clean the floor multiple times to ensure that it is clean. This would also affect the performance measure since it would take more time to clean the floor and would not be able to maximize the performance measure having to redundantly clean the same square multiple times. Along with that due to the chances of the sensor giving the wrong answer, the agent program could miss a dirty square and not clean it ever again, further reducing the performance measure.
+    \item For this scenerio, a way to make this agent rational would be to just have the agent continuously clean the floor and look for dirty squares.
+\end{enumerate}
+\end{document}
